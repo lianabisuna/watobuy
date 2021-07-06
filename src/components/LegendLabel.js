@@ -1,4 +1,4 @@
-const Label = ({ color, number }) => {
+const LegendLabel = ({ color, number }) => {
   return (
     <div className="flex items-center gap-1">
       {/* legend */}
@@ -9,4 +9,4 @@ const Label = ({ color, number }) => {
   );
 }
  
-export default Label;
+export default LegendLabel;

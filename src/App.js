@@ -1,27 +1,43 @@
 import './App.css';
-import Header from './components/Header';
-import Record from './components/Record';
-import Footer from './components/Footer';
+import CardHeader from './components/CardHeader';
+import CardContent from './components/CardContent';
+import CardFooter from './components/CardFooter';
+import { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  const clearItems = () => {
+    let clearedItems = items.filter(item => item.isActive);
+    
+    setItems(clearedItems);
+  };
+
+  const resetItems = () => {
+    setItems([]);
+  };
+
   return (
     <div className="App">
       {/* background */}
-      <main className="bg-gray-900 h-screen flex lg:items-center lg:justify-center">
+      <main className="bg-gray-900 flex min-h-screen lg:py-10 lg:justify-center">
         {/* card */}
-        <div className="bg-white lg:rounded-lg lg:h-5/6 lg:w-1/3 w-full flex flex-col">
+        <div className="bg-white lg:rounded-lg lg:w-1/3 w-full min-h-full flex flex-col">
           {/* header */}
-          <Header />
+          <CardHeader
+            handleClear={clearItems}
+            handleReset={resetItems}
+          />
           {/* record */}
           <div className="flex-grow">
-            <Record />
+            <CardContent
+              items={items}
+              setItems={setItems}
+            />
           </div>
           {/* footer */}
-          <Footer
-            checkedAmount="67"
-            activeAmount="156"
-            checkedTotal="3"
-            totalItems="2"
+          <CardFooter
+            items={items}
           />
         </div>
       </main>
