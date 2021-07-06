@@ -9,7 +9,6 @@ function App() {
 
   const clearItems = () => {
     let clearedItems = items.filter(item => item.isActive);
-    
     setItems(clearedItems);
   };
 

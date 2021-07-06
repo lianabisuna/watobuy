@@ -60,7 +60,7 @@ const CardContent = ({ items, setItems }) => {
   };
 
   // INCREASE QUANTITY
-  const increaseQty = (id) => {
+  const increaseQty = id => {
     let updatedItems = items.map(item => {
       if (item.id === id) {
         item.quantity++;
@@ -75,7 +75,7 @@ const CardContent = ({ items, setItems }) => {
   };
 
   // DECREASE QUANTITY
-  const decreaseQty = (id) => {
+  const decreaseQty = id => {
     let updatedItems = items.map(item => {
       if (item.id === id) {
         if (item.quantity > 1) {

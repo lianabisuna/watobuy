@@ -1,7 +1,7 @@
 const CircleButton = ({ icon, handleClick }) => {
   return (
     <span
-      onClick={(e) => {
+      onClick={e => {
         e.stopPropagation();
         handleClick();
       }}

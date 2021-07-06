@@ -7,7 +7,7 @@ const CardHeader = ({ handleClear, handleReset }) => {
     <div className="flex items-center justify-center p-2 lg:p-5 font-bold relative">
       {/* clear */}
       <span
-        className="hover:text-red-500 cursor-pointer absolute left-2 lg:left-5"
+        className="hover:text-red-500 cursor-pointer absolute left-2 lg:left-5 select-none"
         onClick={() => handleClear()}
       >
         Clear
@@ -20,7 +20,7 @@ const CardHeader = ({ handleClear, handleReset }) => {
       {/* reset */}
       <div className="flex items-center gap-3 absolute right-2 lg:right-5">
         <span
-          className={`${counter > 0?'hover:text-green-500':'hover:text-red-500'} cursor-pointer`}
+          className={`${counter > 0?'hover:text-green-500':'hover:text-red-500'} cursor-pointer select-none`}
           onClick={() => {
             if (counter) {
               handleReset();

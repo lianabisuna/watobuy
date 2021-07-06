@@ -4,7 +4,7 @@ import useFocus from "../hooks/useFocus";
 const FormInputs = ({ onSubmit, item, setItem, price, setPrice, editItem, setEditItem }) => {
   const [inputRef, setInputFocus] = useFocus();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     if (!editItem) {
@@ -46,12 +46,13 @@ const FormInputs = ({ onSubmit, item, setItem, price, setPrice, editItem, setEdi
     }
     else {
       setItem('');
+      setPrice('');
     }
 
     return () => {
       //
     }
-  }, [setItem, editItem])
+  }, [setItem, editItem, setPrice])
 
   return (
     <div>
@@ -61,7 +62,7 @@ const FormInputs = ({ onSubmit, item, setItem, price, setPrice, editItem, setEdi
           <input
             type="text"
             value={item}
-            onChange={(e) => setItem(e.target.value)}
+            onChange={e => setItem(e.target.value)}
             className={`font-bold w-2/3 rounded-l-lg h-12 border-t-2 border-l-2 border-b-2 px-3 ${editItem?'border-green-400':'border-yellow-400'} outline-none`}
             placeholder="Item"
             autoFocus
@@ -72,7 +73,7 @@ const FormInputs = ({ onSubmit, item, setItem, price, setPrice, editItem, setEdi
           <input
             type="number"
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={e => setPrice(e.target.value)}
             className={`font-bold w-1/3 h-12 border-t-2 border-l-2 border-b-2 px-3 ${editItem?'border-green-400':'border-yellow-400'} outline-none`}
             placeholder="Price"
           />

@@ -1,7 +1,7 @@
 const RegularButton = ({ icon, color, handleClick }) => {
   return (
     <button
-      onClick={(e) => {
+      onClick={e => {
         e.stopPropagation();
         handleClick();
       }}

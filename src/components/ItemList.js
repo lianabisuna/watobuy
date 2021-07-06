@@ -13,7 +13,7 @@ const ItemList = ({ items, deleteItem, increaseQty, decreaseQty, toggleItem, han
               toggleItem(item.id)
             }
           }}
-          className={`relative h-14 pl-1 ${item.isActive?'hover:bg-yellow-200':'hover:bg-gray-300'} rounded-lg flex ${item.isActive?'bg-yellow-100':'bg-gray-200'} ${!editItem?'cursor-pointer':''}`}
+          className={`relative select-none h-14 pl-1 ${item.isActive?'hover:bg-yellow-200':'hover:bg-gray-300'} rounded-lg flex ${item.isActive?'bg-yellow-100':'bg-gray-200'} ${!editItem?'cursor-pointer':''}`}
         >
           {/* checked overlay */}
           {!item.isActive && <div className="absolute w-full h-full bg-white left-0 z-10 opacity-40"></div>}

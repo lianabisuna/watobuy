@@ -12,6 +12,7 @@ const CardFooter = ({ items }) => {
         if (!b.isActive) {
           return a + (b.price * b.quantity);
         }
+        return a;
       }, 0);
       setCheckedAmount(checkedItemAmount);
 
@@ -19,6 +20,7 @@ const CardFooter = ({ items }) => {
         if (b.isActive) {
           return a + (b.price * b.quantity);
         }
+        return a;
       }, 0);
       setActiveAmount(activeItemAmount);
 
@@ -28,7 +30,7 @@ const CardFooter = ({ items }) => {
     return () => {
       //
     }
-  }, [items, checkedAmount])
+  }, [items])
 
   return (
     <div className="flex items-center p-2 lg:p-5 justify-between">
